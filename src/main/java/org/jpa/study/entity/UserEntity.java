@@ -30,6 +30,6 @@ public class UserEntity {
 
     @OneToOne
     @JoinColumn(name = "locker_id")
-    private Locker locker;
+    private LockerEntity locker;
 
 }
