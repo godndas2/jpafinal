@@ -45,7 +45,7 @@ public class UserRepositoryTests {
         userEntity.setUserName("tester");
         entityManager.persist(userEntity);
 
-        userEntity.changeTeam(teamEntity);
+//        userEntity.changeTeam(teamEntity);
 
         userRepository.save(userEntity);
 

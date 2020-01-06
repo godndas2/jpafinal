@@ -25,7 +25,7 @@ public class UserController {
 
         UserEntity userEntity = new UserEntity();
         userEntity.setUserName("tester");
-        userEntity.changeTeam(teamEntity);
+//        userEntity.changeTeam(teamEntity);
 
         return userRepository.save(userEntity);
     }

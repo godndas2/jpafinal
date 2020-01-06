@@ -23,6 +23,6 @@ public class TeamEntity {
     @Column(name = "team_name")
     private String teamName;
 
-    @OneToMany(mappedBy = "team")
-    private List<UserEntity> userEntities = new ArrayList<>();
+//    @OneToMany(mappedBy = "team")
+//    private List<UserEntity> userEntities = new ArrayList<>();
 }
