@@ -15,7 +15,7 @@ public class UserEntity {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "user_name")
+    @Column(name = "user_name", nullable = false)
     private String userName;
 
     @Column(name = "create_date")
@@ -32,4 +32,10 @@ public class UserEntity {
     @JoinColumn(name = "locker_id")
     private LockerEntity locker;
 
+    public void changeTeam(TeamEntity team) {
+        this.team = team;
+        if (!team.getUserEntities().contains(this)) {
+            team.getUserEntities().add(this);
+        }
+    }
 }
