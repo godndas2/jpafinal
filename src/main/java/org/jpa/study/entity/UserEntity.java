@@ -25,7 +25,7 @@ public class UserEntity {
     private LocalDateTime modifyDT;
 
     @ManyToOne
-    @JoinColumn(name = "team_id", insertable = false, updatable = false)
+    @JoinColumn(name = "team_id")
     private TeamEntity team;
 
     @OneToOne

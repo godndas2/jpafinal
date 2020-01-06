@@ -12,9 +12,15 @@ spring:
     password:
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     properties:
       hibernate:
         format_sql: true
     open-in-view: false
     database-platform: org.hibernate.dialect.H2Dialect
+    database: h2
+    show-sql: true
+logging:
+  level:
+    root: warn
+    org.jpa.study: debug
