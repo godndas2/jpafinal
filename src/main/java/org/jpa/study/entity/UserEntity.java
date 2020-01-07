@@ -24,7 +24,8 @@ public class UserEntity {
     @Column(name = "zip_code", nullable = false)
     private String zipCode;
 
-    @Column(name = "city", nullable = false)
+
+    @Column(name = "city")
     private String city;
 
     @Column(name = "create_date")
@@ -39,6 +40,9 @@ public class UserEntity {
     @OneToOne
     @JoinColumn(name = "locker_id")
     private LockerEntity locker;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<DeliveryEntity> deliveryEntities = new ArrayList<>();
 
 //    public void changeTeam(TeamEntity team) {
 //        this.team = team;

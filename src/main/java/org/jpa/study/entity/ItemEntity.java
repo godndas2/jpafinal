@@ -1,10 +1,15 @@
 package org.jpa.study.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class ItemEntity {
 
     @Id
@@ -23,4 +28,13 @@ public class ItemEntity {
 
     @ManyToMany(mappedBy = "itemEntities")
     private List<CategoryEntity> categoryEntities = new ArrayList<>();
+
+    public void removeStock(int quantity) {
+        int resetStock = this.stockQuantity - quantity;
+        if (resetStock < 0) {
+            // TODO StockException
+            System.out.println("Stock 이 부족합니다.");
+        }
+        this.stockQuantity = quantity;
+    }
 }

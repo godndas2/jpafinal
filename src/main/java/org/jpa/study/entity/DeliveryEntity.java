@@ -1,5 +1,6 @@
 package org.jpa.study.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.jpa.study.entity.enums.DeliveryStatus;
@@ -22,11 +23,19 @@ public class DeliveryEntity {
     @Column(name = "zip_code", nullable = false)
     private int zipCode;
 
-    @Column(name = "city", nullable = false)
+
+    @Column(name = "city")
     private String city;
 
     @OneToOne(mappedBy = "deliveryEntity")
 //    @JoinColumn(name = "order_id")
     private OrderEntity orderEntity;
 
+    @ManyToOne
+    @JoinColumn(name = "deliveryEntities")
+    private UserEntity userEntity;
+
+    public DeliveryEntity(String city) {
+        this.city = city;
+    }
 }

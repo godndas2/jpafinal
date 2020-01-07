@@ -2,6 +2,7 @@ package org.jpa.study.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 
@@ -24,4 +25,19 @@ public class OrderItemEntity {
     @ManyToOne
     @JoinColumn(name = "orderItems")
     private OrderEntity orderEntity;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id")
+    private ItemEntity itemEntity;
+
+    public static OrderItemEntity createOrderItems(ItemEntity itemEntity, int orderPrice, int count) {
+        OrderItemEntity orderItemEntity = new OrderItemEntity();
+        orderItemEntity.setItemEntity(itemEntity);
+        orderItemEntity.setOrderPrice(orderPrice);
+        orderItemEntity.setCount(count);
+
+        itemEntity.removeStock(count);
+
+        return orderItemEntity;
+    }
 }

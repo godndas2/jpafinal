@@ -6,8 +6,13 @@ import org.jpa.study.entity.OrderItemEntity;
 import org.jpa.study.entity.enums.OrderStatus;
 import org.jpa.study.repository.OrderRepository;
 import org.jpa.study.repository.UserRepository;
+import org.jpa.study.service.ItemService;
+import org.jpa.study.service.OrderService;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
@@ -19,8 +24,8 @@ import javax.persistence.PersistenceContext;
 @RequiredArgsConstructor
 public class OrderController {
 
-    private final UserRepository userRepository;
-    private final OrderRepository orderRepository;
+    private final OrderService orderService;
+    private final ItemService itemService;
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -41,5 +46,13 @@ public class OrderController {
         entityManager.persist(orderItemEntity);
 
         entityManager.close();
+    }
+
+    @PostMapping(value = "/order")
+    public void getOrder(@RequestParam(name = "userId", defaultValue = "1") Long userId,
+                           @RequestParam(name = "itemId", defaultValue = "1") Long itemId,
+                           @RequestParam(name = "count", defaultValue = "1") int count) {
+
+        orderService.getOrder(userId,itemId,count);
     }
 }
