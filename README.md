@@ -2,3 +2,9 @@
 > https://www.inflearn.com/course/ORM-JPA-Basic
 
 # Memo
+```
+public void changeTeam(Team team) {
+        this.team = team;
+        this.team.getMembers().add(this);
+    }
+```
