@@ -25,6 +25,7 @@ public class UserController {
 
         UserEntity userEntity = new UserEntity();
         userEntity.setUserName("tester");
+        userEntity.setZipCode("21342-12342");
 //        userEntity.changeTeam(teamEntity);
 
         return userRepository.save(userEntity);
