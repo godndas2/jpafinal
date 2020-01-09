@@ -37,7 +37,7 @@ public class UserEntity {
     @OneToMany(mappedBy = "userEntity")
     private List<OrderEntity> orderEntities = new ArrayList<>();
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "locker_id")
     private LockerEntity locker;
 

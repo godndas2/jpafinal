@@ -27,11 +27,11 @@ public class DeliveryEntity {
     @Column(name = "city")
     private String city;
 
-    @OneToOne(mappedBy = "deliveryEntity")
+    @OneToOne(mappedBy = "deliveryEntity", fetch = FetchType.LAZY)
 //    @JoinColumn(name = "order_id")
     private OrderEntity orderEntity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "deliveryEntities")
     private UserEntity userEntity;
 

@@ -11,6 +11,6 @@ public class LockerEntity {
 
     private String name;
 
-    @OneToOne(mappedBy = "locker")
+    @OneToOne(mappedBy = "locker",fetch = FetchType.LAZY)
     private UserEntity userEntity;
 }

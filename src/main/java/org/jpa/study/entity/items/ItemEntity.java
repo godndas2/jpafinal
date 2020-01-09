@@ -1,7 +1,8 @@
-package org.jpa.study.entity;
+package org.jpa.study.entity.items;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.jpa.study.entity.CategoryEntity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
 @DiscriminatorColumn(name = "ITEM_TYPE") // DTYPE 만들어줌,
 @Getter
 @Setter
-public class ItemEntity {
+public abstract class ItemEntity {
 
     @Id
     @GeneratedValue

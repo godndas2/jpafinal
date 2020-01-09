@@ -2,6 +2,7 @@ package org.jpa.study.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.jpa.study.entity.items.ItemEntity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class CategoryEntity {
     @Column(name = "category_name")
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private CategoryEntity parent;
 
