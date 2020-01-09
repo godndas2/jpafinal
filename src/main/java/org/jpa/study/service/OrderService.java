@@ -2,7 +2,7 @@ package org.jpa.study.service;
 
 import lombok.RequiredArgsConstructor;
 import org.jpa.study.entity.*;
-import org.jpa.study.entity.items.ItemEntity;
+import org.jpa.study.entity.ItemEntity;
 import org.jpa.study.exception.UserNotFoundException;
 import org.jpa.study.repository.OrderRepository;
 import org.jpa.study.repository.UserRepository;

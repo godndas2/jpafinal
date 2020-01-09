@@ -1,4 +1,4 @@
-package org.jpa.study.entity.items;
+package org.jpa.study.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,7 @@ import java.util.List;
 @DiscriminatorColumn(name = "ITEM_TYPE") // DTYPE 만들어줌,
 @Getter
 @Setter
-public abstract class ItemEntity {
+public class ItemEntity {
 
     @Id
     @GeneratedValue

@@ -1,7 +1,7 @@
 package org.jpa.study.service;
 
 import lombok.RequiredArgsConstructor;
-import org.jpa.study.entity.items.ItemEntity;
+import org.jpa.study.entity.ItemEntity;
 import org.jpa.study.exception.ItemNotFoundException;
 import org.jpa.study.repository.ItemRepository;
 import org.springframework.stereotype.Service;

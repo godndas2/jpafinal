@@ -2,7 +2,6 @@ package org.jpa.study.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.jpa.study.entity.items.ItemEntity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
