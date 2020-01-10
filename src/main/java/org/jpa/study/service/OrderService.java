@@ -29,12 +29,13 @@ public class OrderService {
         UserEntity userEntity = userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
         ItemEntity itemEntity = itemService.findItemsOne(itemId);
 
-        DeliveryEntity deliveryEntity = new DeliveryEntity(Objects.requireNonNull(userEntity).getCity());
+//        DeliveryEntity deliveryEntity = new DeliveryEntity(Objects.requireNonNull(userEntity).getCity());
         OrderItemEntity orderItemEntity = OrderItemEntity.createOrderItems(itemEntity, itemEntity.getPrice(), count);
-        OrderEntity orderEntity = OrderEntity.createOrders(userEntity, deliveryEntity, orderItemEntity);
+//        OrderEntity orderEntity = OrderEntity.createOrders(userEntity, deliveryEntity, orderItemEntity);
 
-        orderRepository.save(orderEntity);
-        return orderEntity.getId();
+//        orderRepository.save(orderEntity);
+//        return orderEntity.getId();
+        return null;
 
 
     }

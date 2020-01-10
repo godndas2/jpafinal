@@ -3,6 +3,8 @@ package org.jpa.study.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.aspectj.weaver.ast.Or;
+import org.jpa.study.entity.period.Period;
+import org.jpa.study.entity.zipcode.Address;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -21,18 +23,13 @@ public class UserEntity {
     @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Column(name = "zip_code", nullable = false)
-    private String zipCode;
+    // 기간
+    @Embedded
+    private Period workPeriod;
 
-
-    @Column(name = "city")
-    private String city;
-
-    @Column(name = "create_date")
-    private LocalDateTime createDT;
-
-    @Column(name = "modify_date")
-    private LocalDateTime modifyDT;
+    // 주소
+    @Embedded
+    private Address homeAddress;
 
     @OneToMany(mappedBy = "userEntity")
     private List<OrderEntity> orderEntities = new ArrayList<>();
