@@ -2,6 +2,7 @@ package org.jpa.study.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.jpa.study.entity.enums.DeliveryStatus;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class DeliveryEntity {
 
     @Id

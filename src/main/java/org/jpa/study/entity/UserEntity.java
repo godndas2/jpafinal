@@ -2,12 +2,10 @@ package org.jpa.study.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.aspectj.weaver.ast.Or;
 import org.jpa.study.entity.period.Period;
 import org.jpa.study.entity.zipcode.Address;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +38,10 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity")
     private List<DeliveryEntity> deliveryEntities = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private TeamEntity teamEntity;
 
 //    public void changeTeam(TeamEntity team) {
 //        this.team = team;

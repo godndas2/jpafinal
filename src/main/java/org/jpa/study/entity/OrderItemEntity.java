@@ -22,7 +22,7 @@ public class OrderItemEntity {
     private int count;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "orderItems")
+    @JoinColumn(name = "order_id")
     private OrderEntity orderEntity;
 
     @ManyToOne(fetch = FetchType.LAZY)

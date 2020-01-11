@@ -23,8 +23,8 @@ public class UserController {
     private final LockerRepository lockerRepository;
 
     // TODO DTO 만들자 Controller 에서 Entity 반환은 죄악 + id generate 되는 숫자 체크해봐야함
-    @PostMapping(value = "/api/v1/add")
     @Transactional
+    @PostMapping(value = "/api/v1/add")
     public UserEntity add() {
 
         LockerEntity lockerEntity = new LockerEntity();

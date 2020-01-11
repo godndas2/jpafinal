@@ -3,11 +3,11 @@ package org.jpa.study.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.jpa.study.entity.enums.OrderStatus;
+import org.jpa.study.entity.zipcode.Address;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -25,6 +25,16 @@ public class OrderEntity {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
+
+    @Column(name = "order_amount")
+    private int orderAmount;
+
+    @Embedded
+    private Address address;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private ProductEntity productEntity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")

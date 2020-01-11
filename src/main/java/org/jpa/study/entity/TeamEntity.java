@@ -23,6 +23,9 @@ public class TeamEntity {
     @Column(name = "team_name")
     private String teamName;
 
+    @OneToMany(mappedBy = "teamEntity")
+    private List<UserEntity> userEntities = new ArrayList<>();
+
 //    @OneToMany(mappedBy = "team")
 //    private List<UserEntity> userEntities = new ArrayList<>();
 }
